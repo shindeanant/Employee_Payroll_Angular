@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-// import { AppComponent } from './app.component';
+import { AppComponent } from './app.component';
 import { HeaderComponent } from './component/header/header.component';
 import { DashBoardComponent } from './dash-board/dash-board.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
+import { UserDetails } from './services/user-details';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DashBoardComponent,
-   
-
   ],
   imports: [
     BrowserModule,

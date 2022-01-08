@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { UserDetails } from '../services/user-details';
-// import { EmployeeService } from '../services/employee.service';
-import { FormGroup } from '@angular/forms';
+import { UserDetails } from '../services/user-details';
+import { EmployeeService } from '../services/employee.service';
 
 @Component({
   selector: 'app-dash-board',
@@ -10,33 +9,17 @@ import { FormGroup } from '@angular/forms';
 })
 export class DashBoardComponent implements OnInit {
 
-  constructor() { }
+  user:any;
+  empDataList:UserDetails[]=[];
 
-  ngOnInit(): void {
-  }
+ constructor(private employee: EmployeeService ){}
+ ngOnInit(){
+   this.employee.getEmployeePayrollData().subscribe( data => { 
+     this.user=data;
+     this.empDataList=this.user.data;
+       console.log(this.empDataList);
+
+        });
 
 }
-
-
-// export class DashBoardComponent implements OnInit {
-//   registerForm!:FormGroup;
-//   submitted=false;
-//   user:any;
-//   empDetailList:UserDetails[]=[];
-
-//  constructor(private employee: EmployeeService ){}
-//  ngOnInit(){
-//    debugger
-//    this.employee.getUser().subscribe( (data: any) => { 
-//      this.user=data;
-//      this.empDetailList=this.user.employeePayrollDataList;
-//        console.log(this.empDetailList);
-
-//         });
-
-//   }
-
-//     get f(){
-//     return this.registerForm.controls;
-//   }
-// }
+}
