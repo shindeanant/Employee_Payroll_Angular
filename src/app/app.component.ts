@@ -8,7 +8,7 @@ import { UserDetails } from './services/user-details';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  // title = 'Employee_Pay_Roll';
+  title = 'Employee_Pay_Roll';
   // user:any;
   // empDataList:UserDetails[]=[];
   // constructor(private employee: EmployeeService){}
@@ -21,5 +21,5 @@ export class AppComponent {
   //     //  console.log(this.user.employeeId);
  
   //        });
-  
+  //       }
 }
